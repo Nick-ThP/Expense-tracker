@@ -1,4 +1,6 @@
 import { Card, CardHeader, CardContent, Typography, Grid, Divider } from '@material-ui/core'
+import Form from './Form/Form'
+import List from './List/List'
 import useStyles from './styles'
 
 const Main = () => {
@@ -17,12 +19,12 @@ const Main = () => {
                 Try saying: Add income of 300€ in category salary for monday...
             </Typography>
             <Divider />
-            {/* Form */}
+            <Form />
         </CardContent>
         <CardContent className={classes.cardContent}>
             <Grid container spacing={2}>
                 <Grid item xs={12}>
-                    {/* List */}
+                    <List />
                 </Grid>
             </Grid>
         </CardContent>

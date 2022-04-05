@@ -1,4 +1,4 @@
-import { Textfield, Typography, Grid, Button, FormControl, InputLabel, Select, MenuItem } from '@material-ui/core'
+import { TextField, Typography, Grid, Button, FormControl, InputLabel, Select, MenuItem } from '@material-ui/core'
 import useStyles from './styles'
 
 
@@ -26,10 +26,18 @@ const Form = () => {
             <FormControl fullwidth>
                 <inputLabel>Category</inputLabel>
                 <Select>
-                    
+                    <MenuItem value="business">Business</MenuItem>
+                    <MenuItem value="salary">Salary</MenuItem>
                 </Select>
             </FormControl>
         </Grid>
+        <Grid item xs={6}>
+            <TextField type="number" label="Amount" fullwidth />
+        </Grid>
+        <Grid item xs={6}>
+            <TextField type="date" label="Date" fullwidth />
+        </Grid>
+        <Button className={classes.button} variant="outlined" color="primary" fullwidth>Create</Button>
     </Grid>
   )
 }
