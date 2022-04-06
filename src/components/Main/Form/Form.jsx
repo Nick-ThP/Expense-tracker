@@ -1,14 +1,16 @@
 import { useState, useContext } from 'react'
 import { TextField, Typography, Grid, Button, FormControl, InputLabel, Select, MenuItem } from '@material-ui/core'
-import useStyles from './styles'
 import { ExpenseTrackerContext } from '../../../context/context'
 import { v4 as uuidv4 } from 'uuid'
+import formatDate from '../../../utils/formatDate'
+import useStyles from './styles'
+import { incomeCategories, expenseCategories } from '../../../constants/categories'
 
 const initialState = {
     amount: '',
     category: '',
     type: 'Income',
-    date: new Date()
+    date: formatDate(new Date())
 }
 
 const Form = () => {
@@ -22,6 +24,8 @@ const Form = () => {
     addTransaction(transaction)
     setFormData(initialState)
   }
+
+  const selectedCategories = formData.type === 'Income' ? incomeCategories : expenseCategories
 
   return (
     <Grid container spacing={2}>
@@ -43,8 +47,7 @@ const Form = () => {
             <FormControl fullwidth>
                 <inputLabel>Category</inputLabel>
                 <Select value={formData.category} onChange={(e) => setFormData({ ...formData, category: e.target.value })}>
-                    <MenuItem value="business">Business</MenuItem>
-                    <MenuItem value="salary">Salary</MenuItem>
+                    {selectedCategories.map((c) => <MenuItem key={c.type} value={c.type}>{c.type}</MenuItem>)}
                 </Select>
             </FormControl>
         </Grid>
@@ -52,7 +55,7 @@ const Form = () => {
             <TextField type="number" label="Amount" fullwidth value={formData.amount} onChange={(e) => setFormData({ ...formData, amount: e.target.value })} />
         </Grid>
         <Grid item xs={6}>
-            <TextField type="date" label="Date" fullwidth value={formData.date} onChange={(e) => setFormData({ ...formData, date: e.target.value })} />
+            <TextField type="date" label="Date" fullwidth value={formData.date} onChange={(e) => setFormData({ ...formData, date: formatDate(e.target.value) })} />
         </Grid>
         <Button className={classes.button} variant="outlined" color="primary" fullwidth onClick={createTransaction}>Create</Button>
     </Grid>
