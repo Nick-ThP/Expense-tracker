@@ -35,7 +35,7 @@ const Form = () => {
             </Typography>
         </Grid>
         <Grid item xs={6}>
-            <FormControl fullwidth>
+            <FormControl fullWidth="true">
                 <InputLabel>Type</InputLabel>
                 <Select value={formData.type} onChange={(e) => setFormData({ ...formData, type: e.target.value })}>
                     <MenuItem value="Income">Income</MenuItem>
@@ -44,21 +44,22 @@ const Form = () => {
             </FormControl>
         </Grid>
         <Grid item xs={6}>
-            <FormControl fullwidth>
-                <inputLabel>Category</inputLabel>
+            <FormControl fullWidth="true">
+                <InputLabel>Category</InputLabel>
                 <Select value={formData.category} onChange={(e) => setFormData({ ...formData, category: e.target.value })}>
                     {selectedCategories.map((c) => <MenuItem key={c.type} value={c.type}>{c.type}</MenuItem>)}
                 </Select>
             </FormControl>
         </Grid>
         <Grid item xs={6}>
-            <TextField type="number" label="Amount" fullwidth value={formData.amount} onChange={(e) => setFormData({ ...formData, amount: e.target.value })} />
+            <TextField type="number" label="Amount" fullWidth="true" value={formData.amount} onChange={(e) => setFormData({ ...formData, amount: e.target.value })} />
         </Grid>
         <Grid item xs={6}>
-            <TextField type="date" label="Date" fullwidth value={formData.date} onChange={(e) => setFormData({ ...formData, date: formatDate(e.target.value) })} />
+            <TextField type="date" label="Date" fullWidth="true" value={formData.date} onChange={(e) => setFormData({ ...formData, date: formatDate(e.target.value) })} />
         </Grid>
-        <Button className={classes.button} variant="outlined" color="primary" fullwidth onClick={createTransaction}>Create</Button>
+        <Button className={classes.button} variant="outlined" color="primary" fullWidth="true" onClick={createTransaction}>Create</Button>
     </Grid>
   )
 }
+
 export default Form
