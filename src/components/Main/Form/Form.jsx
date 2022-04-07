@@ -1,10 +1,11 @@
 import { useState, useContext } from 'react'
-import { TextField, Typography, Grid, Button, FormControl, InputLabel, Select, MenuItem } from '@material-ui/core'
+import { TextField, Grid, Button, FormControl, InputLabel, Select, MenuItem } from '@material-ui/core'
 import { ExpenseTrackerContext } from '../../../context/context'
 import { v4 as uuidv4 } from 'uuid'
 import formatDate from '../../../utils/formatDate'
 import useStyles from './styles'
 import { incomeCategories, expenseCategories } from '../../../constants/categories'
+import CustomizedSnackbar from '../../Snackbar/Snackbar'
 
 const initialState = {
     amount: '',
@@ -18,9 +19,11 @@ const Form = () => {
   const classes = useStyles()
   const [formData, setFormData] = useState(initialState)
   const { addTransaction } = useContext(ExpenseTrackerContext)
+  const [open, setOpen] = useState(false)
 
   const createTransaction = () => {
     const transaction = { ...formData, amount: Number(formData.amount), id: uuidv4() }
+    setOpen(true)
     addTransaction(transaction)
     setFormData(initialState)
   }
@@ -29,11 +32,7 @@ const Form = () => {
 
   return (
     <Grid container spacing={2}>
-        <Grid item xs={12}>
-            <Typography align="center" variant="subtitle2" gutterBottom>
-                ...
-            </Typography>
-        </Grid>
+        <CustomizedSnackbar open={open} setOpen={setOpen} />
         <Grid item xs={6}>
             <FormControl fullWidth="true">
                 <InputLabel>Type</InputLabel>
@@ -52,7 +51,7 @@ const Form = () => {
             </FormControl>
         </Grid>
         <Grid item xs={6}>
-            <TextField type="number" label="Amount" fullWidth="true" value={formData.amount} onChange={(e) => setFormData({ ...formData, amount: e.target.value })} />
+            <TextField type="number" label="Amount in DKK" fullWidth="true" value={formData.amount} onChange={(e) => setFormData({ ...formData, amount: e.target.value })} />
         </Grid>
         <Grid item xs={6}>
             <TextField type="date" label="Date" fullWidth="true" value={formData.date} onChange={(e) => setFormData({ ...formData, date: formatDate(e.target.value) })} />
