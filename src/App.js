@@ -1,6 +1,7 @@
 import Details from './components/Details/Details'
 import Main from './components/Main/Main'
 import { Grid } from '@material-ui/core'
+import { PushToTalkButton, PushToTalkButtonContainer } from '@speechly/react-ui'
 import useStyles from './styles'
 
 const App = () => {
@@ -19,6 +20,9 @@ const App = () => {
             <Grid item xs={12} sm={4}>
                 <Details title="Expense" />
             </Grid>
+            <PushToTalkButtonContainer>
+                <PushToTalkButton />
+            </PushToTalkButtonContainer>
         </Grid>
     </div>
   )

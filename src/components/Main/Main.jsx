@@ -16,7 +16,7 @@ const Main = () => {
             </Typography>
             <Typography variant="subtitle1" style={{ lineHeight: '1.5em', marginTop: '20px'}}>
                 {/* InfoCard */}
-                Try saying: Add income of 300€ in category salary for monday...
+                Try saying: Add income of 300 kr in category salary for monday...
             </Typography>
             <Divider />
             <Form />
