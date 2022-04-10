@@ -9,6 +9,10 @@ const List = () => {
   const classes = useStyle()
   const { deleteTransaction, transactions } = useContext(ExpenseTrackerContext)
 
+  const danishDate = (string) => {
+    return string.split('-').reverse().join('-')
+  }
+
   return (
     <MUIList dense={false} className={classes.list}>
         {transactions.map((transaction) => (
@@ -19,7 +23,7 @@ const List = () => {
                             {transaction.type === 'Income' ? <AttachMoney /> : <MoneyOff /> }
                         </Avatar>
                     </ListItemAvatar>
-                    <ListItemText primary={transaction.category} secondary={`${transaction.amount} kr - ${transaction.date}`} />
+                    <ListItemText primary={transaction.category} secondary={`${transaction.amount} kr - ${danishDate(transaction.date)}`} />
                     <ListItemSecondaryAction>
                         <IconButton edge="end" aria-label="delete" onClick={() => deleteTransaction(transaction.id)}>
                             <Delete />

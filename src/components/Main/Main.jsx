@@ -10,11 +10,10 @@ const Main = () => {
   const classes = useStyles()
   const { balance } = useContext(ExpenseTrackerContext)
 
-  return (
+  return (<>
     <Card className={classes.root}>
-        <CardHeader title="Expense Tracker" />
         <CardContent>
-            <Typography align="center" variant="h5" gutterBottom>
+            <Typography align="center" variant="h5">
                 Balance: {balance} kr
             </Typography>
             <Divider className={classes.divider} />
@@ -28,7 +27,7 @@ const Main = () => {
             </Grid>
         </CardContent>
     </Card>
-  )
+  </>)
 }
 
 export default Main

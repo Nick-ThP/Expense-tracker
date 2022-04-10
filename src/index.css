@@ -1,5 +1,5 @@
 #root, body, html {
-    height: 100%;
+    height: 100vh;
     margin: 0;
 }
 
@@ -7,4 +7,13 @@ body {
     background-image: url(./images/food.png);
     background-size: repeat;
     background-color: skyblue;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Emblema One', 'roboto', cursive;
+    font-size: 4rem;
+}
+
+h1 {
+    color: black;
 }

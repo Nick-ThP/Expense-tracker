@@ -10,16 +10,17 @@ import CustomizedSnackbar from '../../Snackbar/Snackbar'
 const initialState = {
     amount: '',
     category: '',
-    type: 'Income',
+    type: '',
     date: formatDate(new Date())
 }
 
 const Form = () => {
 
   const classes = useStyles()
-  const [formData, setFormData] = useState(initialState)
   const { addTransaction } = useContext(ExpenseTrackerContext)
+  
   const [open, setOpen] = useState(false)
+  const [formData, setFormData] = useState(initialState)
 
   const createTransaction = () => {
     const transaction = { ...formData, amount: Number(formData.amount), id: uuidv4() }

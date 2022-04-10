@@ -9,9 +9,9 @@ const Details = ({ title }) => {
 
   return (
     <Card className={title === 'Income' ? classes.income : classes.expense}>
-        <CardHeader title={title} />
+        <CardHeader align="center" variant="h4" title={title} />
         <CardContent>
-            <Typography variant="h5">{total} kr</Typography>
+            <Typography align="center" variant="h5">{total} kr</Typography>
             <Doughnut data={chartData} />
         </CardContent>
     </Card>
