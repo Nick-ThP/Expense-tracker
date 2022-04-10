@@ -2,10 +2,20 @@ import Details from './components/Details/Details'
 import Main from './components/Main/Main'
 import { Grid } from '@material-ui/core'
 import useStyles from './styles'
+import { createTheme } from "@material-ui/core/styles";
 
 const App = () => {
   
   const classes = useStyles()
+
+  const testTheme = createTheme({
+    typography: {
+      fontFamily: [
+        'Yantramanav',
+        'sans-serif'
+      ].join(",")
+    }
+  });
 
   return (
     <div style={{
@@ -14,8 +24,7 @@ const App = () => {
         alignItems: 'center',
         flexDirection: 'column',
         width: '100%',
-        minHeight: '100vh',
-        gap: '3rem' 
+        minHeight: '100vh'
     }}>
         <div style={{
             display: 'flex',
@@ -33,16 +42,16 @@ const App = () => {
         </div>
         <Grid className={classes.grid} container spacing={0} alignItems="center" justifyContent="center" style={{ margin: '0 auto', verticalAlign: 'center' }}>
             <Grid item xs={12} sm={3} className={classes.mobile}>
-                <Details title="Income" />
+                <Details title="Income" theme={testTheme} />
             </Grid>
             <Grid item xs={12} sm={4} className={classes.main}>
-                <Main />
+                <Main theme={testTheme} />
             </Grid>
             <Grid item xs={12} sm={3} className={classes.desktop}>
-                <Details title="Income" />
+                <Details title="Income" theme={testTheme} />
             </Grid>
             <Grid item xs={12} sm={3} className={classes.last}>
-                <Details title="Expense" />
+                <Details title="Expense" theme={testTheme} />
             </Grid>
         </Grid>
     </div>

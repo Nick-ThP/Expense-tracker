@@ -5,7 +5,7 @@ import List from './List/List'
 import { ExpenseTrackerContext } from '../../context/context'
 import useStyles from './styles'
 
-const Main = () => {
+const Main = ({ testTheme }) => {
 
   const classes = useStyles()
   const { balance } = useContext(ExpenseTrackerContext)
@@ -13,9 +13,11 @@ const Main = () => {
   return (<>
     <Card className={classes.root}>
         <CardContent>
-            <Typography align="center" variant="h5">
-                Balance: {balance} kr
-            </Typography>
+            <CardHeader align="center" title={
+                <Typography variant="h5">
+                    Balance: {balance} kr
+                </Typography>
+            } />
             <Divider className={classes.divider} />
             <Form />
         </CardContent>

@@ -9,11 +9,17 @@ body {
     background-color: skyblue;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Emblema One', 'roboto', cursive;
-    font-size: 4rem;
+h1 {
+    font-family: 'Goldman', cursive;
+    font-size: 5rem;
+    color: black;
+    margin-bottom: 100px;
 }
 
-h1 {
-    color: black;
+@media only screen and (max-width: 600px) {
+
+   h1 {
+        font-size: 3rem;
+        margin-bottom: 0;
+   }
 }
