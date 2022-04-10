@@ -12,12 +12,12 @@ const Details = ({ title, testTheme }) => {
       <Card className={title === 'Income' ? classes.income : classes.expense}>
           <CardHeader align="center" title={
             <Typography variant="h5">
-              {title}
+              <strong>{title}</strong>
             </Typography>
           } />
           <CardContent>
               <Doughnut  align="center" data={chartData} />
-              <Typography align="center" className={classes.number} variant="h6"><strong>{total} kr</strong></Typography>
+              <Typography align="center" className={classes.number} variant="h6">{total} kr</Typography>
           </CardContent>
       </Card>
     </ThemeProvider>
