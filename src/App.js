@@ -31,7 +31,7 @@ const App = () => {
             juistifyContent: 'center',
             alignItems: 'center',
             width: '100%',
-            height: '20vh', 
+            height: '18vh', 
         }}>
             <h1 style={{
                 textAlign: 'center',
