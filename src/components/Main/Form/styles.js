@@ -7,8 +7,11 @@ export default makeStyles(() => ({
     marginBottom: '-10px'
   },
   button: {
-    marginTop: '20px',
+    border: '1px solid gray',
+    color: 'black',
+    margin: '20px auto',
     padding: '10px',
-    backgroundColor: 'ivory'
+    backgroundColor: 'ivory',
+    width: '97.5%'
   }
 }))

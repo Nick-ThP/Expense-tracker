@@ -15,7 +15,7 @@ const Main = ({ testTheme }) => {
         <CardContent>
             <CardHeader align="center" title={
                 <Typography variant="h4">
-                    <strong>Balance: {balance} kr</strong>
+                    Balance: {balance} kr
                 </Typography>
             } />
             <Divider className={classes.divider} />

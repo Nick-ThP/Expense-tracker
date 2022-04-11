@@ -12,11 +12,12 @@ body {
 h1 {
     font-family: 'Goldman', cursive;
     font-size: 5rem;
-    color: black;
-    margin-bottom: 100px;
+    color: ivory;
+    text-shadow: 0 0 1px ivory, 0 0 2px black, 0 0 3px ivory, 0 0 4px black, 0 0 5px ivory, 0 0 6px black;
+    
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1000px) {
 
    h1 {
         font-size: 3rem;
