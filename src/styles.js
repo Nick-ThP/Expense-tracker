@@ -18,7 +18,7 @@ export default makeStyles((theme) => ({
   last: {
     [theme.breakpoints.down('xs')]: {
       marginBottom: theme.spacing(3),
-      paddingBottom: '4%',
+      paddingBottom: '4.5%',
     },
   },
   grid: {
