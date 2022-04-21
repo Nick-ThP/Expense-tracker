@@ -16,7 +16,7 @@ const Details = ({ title, testTheme }) => {
             </Typography>
           } />
           <CardContent>
-              <Doughnut  align="center" data={chartData} />
+              <Doughnut align="center" data={chartData} />
               <Typography align="center" className={classes.number} variant="h6">{total} kr</Typography>
           </CardContent>
       </Card>
