@@ -18,14 +18,11 @@ export default makeStyles((theme) => ({
   last: {
     [theme.breakpoints.down('xs')]: {
       marginBottom: theme.spacing(3),
-      paddingBottom: '2.5%',
+      paddingBottom: '4.5%',
     },
   },
   grid: {
     '& > *': {
-      [theme.breakpoints.down('xs')]: {
-        margin: theme.spacing(1)
-    },
       margin: theme.spacing(2),
     },
     
